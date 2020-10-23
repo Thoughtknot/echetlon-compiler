@@ -1,0 +1,43 @@
+# Echetlon
+
+Simple compiler implementation (alpha level) of the echetlon language.
+Compiles to echetlon bytecode.
+
+####Sample:
+```
+obj Pair {
+    int a;
+    int b;
+};
+
+obj Unit {
+    int[] z;
+};
+
+obj String {
+    string h;
+    int print: {
+        int k = 42;
+        k = k + 1;
+        system.print(k);
+        return 1;
+    };
+};
+
+Pair foo = new Pair(b = 9, a = 2);
+Unit apa = new Unit(z = { 2, 5, 3 });
+Pair boo = new Pair(a = 1, b = 7);
+String s = new String(h = "Hello World!");
+
+boo.b = foo.a;
+boo.a = 35 + apa.z[1];
+int r = 3;
+loop boo.b {
+    r = r - 1;
+    boo.b = boo.b - 1;
+};
+
+string k = "hello";
+system.print(k);
+s.print();
+```
